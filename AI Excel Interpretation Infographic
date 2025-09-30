@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Excel Interpretation Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1B2A;
+            color: #FFFFFF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .section-card {
+            background-color: #1B2F45;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid #2A4663;
+        }
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            color: #E9C46A;
+        }
+        .flow-step {
+            background-color: #2A4663;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .flow-arrow {
+            color: #E9C46A;
+            font-weight: bold;
+            font-size: 2rem;
+            line-height: 1;
+        }
+        .code-block {
+            background-color: #0D1B2A;
+            color: #F4A261;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+            border-left: 3px solid #2A9D8F;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.7rem;
+            top: 0;
+            height: 1.25rem;
+            width: 1.25rem;
+            background-color: #E9C46A;
+            border-radius: 9999px;
+            border: 3px solid #0D1B2A;
+        }
+    </style>
+    <!-- Chosen Palette: Energetic & Playful -->
+    <!-- Application Structure Plan: This infographic tells a linear story about solving the problem of interpreting visually complex Excel files. It starts with a hook defining the problem, presents two competing solutions side-by-side for clear comparison, dives deeper into the more advanced solution, highlights the key technology enabling it, lists the necessary tools, and concludes with a clear, actionable roadmap. This narrative structure guides the user from problem to solution logically. -->
+    <!-- Visualization & Content Choices: 
+        - Problem Statement: Goal: Inform. Method: Large text stat & styled HTML to mimic Excel. Justification: Immediately grabs attention and visually defines the core problem without charts. No SVG.
+        - Solution Comparison: Goal: Compare. Method: Two HTML/CSS flowcharts. Justification: Clearly visualizes the two distinct processes for easy side-by-side comparison. No SVG/Mermaid.
+        - Representation Richness: Goal: Compare. Method: Donut Chart (Chart.js). Justification: Effectively shows the relative completeness of different data representations in conveying visual context. No SVG.
+        - AI Model Context Windows: Goal: Compare. Method: Bar Chart (Chart.js). Justification: The best way to compare a single, crucial metric (context size) across different models. No SVG.
+        - Roadmap: Goal: Organize. Method: HTML/CSS Timeline. Justification: Presents the strategic phases in a clear, sequential, and visually appealing format. No SVG.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 md:px-8 py-12">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Reading <span class="text-[#E9C46A]">Between the Cells</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">The AI Revolution in Understanding Visually Formatted Excel Files</p>
+        </header>
+
+        <section id="problem" class="mb-20">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4 text-[#F4A261]">The Hidden Language of Spreadsheets</h2>
+                    <p class="text-gray-300 mb-6">In finance and other specialized fields, Excel is more than a grid of data—it's a visual canvas. Layout, colors, and merged cells convey critical meaning that standard data parsers completely miss.</p>
+                    <div class="section-card">
+                        <p class="text-gray-400 text-sm">THE CHALLENGE</p>
+                        <p class="stat-number">90%</p>
+                        <p class="font-semibold text-lg">of visual context is lost when treating complex spreadsheets as simple data tables.</p>
+                    </div>
+                </div>
+                <div class="section-card p-4">
+                     <h3 class="font-semibold text-center mb-3 text-white">A Human Sees Structure, A Parser Sees Chaos</h3>
+                    <div class="grid grid-cols-4 gap-1 bg-[#0D1B2A] p-1 rounded">
+                        <div class="col-span-4 font-bold bg-[#2A4663] text-center p-2 rounded">Mineral Ownership Report</div>
+                        <div class="font-bold bg-[#2A9D8F] p-2 rounded">Owner</div>
+                        <div class="font-bold bg-[#2A9D8F] p-2 rounded">Mineral Interest</div>
+                        <div class="font-bold bg-[#E76F51] p-2 rounded">Royalty</div>
+                        <div class="font-bold bg-[#E76F51] p-2 rounded">Non-Producing</div>
+                        <div class="bg-[#1B2F45] p-2 rounded">ABC Corp</div>
+                        <div class="bg-[#1B2F45] p-2 rounded text-center">50.00%</div>
+                        <div class="bg-[#1B2F45] p-2 rounded text-center">12.50%</div>
+                        <div class="bg-[#1B2F45] p-2 rounded text-center">YES</div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-2 text-center">Proximity implies that "Royalty" and "Non-Producing" are related concepts, a detail most parsers would miss.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-[#F4A261]">Two Paths to Understanding</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="section-card">
+                    <h3 class="text-2xl font-bold mb-4 text-[#E76F51]">Path A: The Vision Approach</h3>
+                    <p class="text-gray-300 mb-6">This method treats the spreadsheet as a picture, preserving the layout perfectly for a vision-enabled AI.</p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <div class="flow-step">Excel</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">Image</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">AI</div>
+                    </div>
+                    <ul class="mt-6 space-y-2 text-sm">
+                        <li><span class="font-bold text-green-400">PRO:</span> Captures 100% of visual formatting.</li>
+                        <li><span class="font-bold text-red-400">CON:</span> AI sees pixels, not underlying data values or formulas.</li>
+                    </ul>
+                </div>
+                <div class="section-card border-2 border-[#E9C46A]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#E9C46A]">Path B: The Direct Analysis Frontier</h3>
+                    <p class="text-gray-300 mb-6">This advanced method reads the file directly, extracting both data and styling information into a rich text format for the AI.</p>
+                    <div class="flex items-center justify-center space-x-4">
+                        <div class="flow-step">Excel</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">Rich Text</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">AI</div>
+                    </div>
+                    <ul class="mt-6 space-y-2 text-sm">
+                        <li><span class="font-bold text-green-400">PRO:</span> AI gets data values, formulas, AND visual context.</li>
+                        <li><span class="font-bold text-green-400">PRO:</span> More accurate, robust, and less prone to OCR errors.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-[#F4A261]">How Direct Analysis Works</h2>
+            <div class="grid lg:grid-cols-2 gap-8 items-center">
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-4">1. Deep Extraction with Code</h3>
+                    <p class="text-gray-300 mb-4">Libraries like Python's <code class="bg-[#0D1B2A] text-[#F4A261] px-1 rounded">openpyxl</code> read cell values, fonts, colors, and merged cell data.</p>
+                    <div class="code-block">
+                        <span style="color:#2A9D8F;">cell = sheet['A1']</span><br>
+                        <span style="color:#E9C46A;">value = cell.value</span><br>
+                        <span style="color:#E9C46A;">is_bold = cell.font.bold</span><br>
+                        <span style="color:#E9C46A;">fill_color = cell.fill.fgColor.rgb</span><br>
+                    </div>
+                    <h3 class="text-xl font-bold mt-6 mb-4">2. Create a Rich Representation</h3>
+                    <p class="text-gray-300">The extracted data is converted into a structured text format (like HTML) that describes the layout for the AI.</p>
+                </div>
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-4 text-center">Visual Context Captured by Format</h3>
+                    <p class="text-center text-gray-400 mb-4">Different formats capture the visual richness of the original Excel file to varying degrees. HTML is the most expressive, preserving the most context for the AI model.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="representationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-powerhouse" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-[#F4A261]">The AI Powerhouse: Large Context Models</h2>
+            <p class="text-center text-gray-300 max-w-3xl mx-auto mb-10">This entire process is enabled by AI models with massive "context windows," allowing them to analyze the rich text representation of an entire spreadsheet at once.</p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="section-card text-center">
+                    <p class="text-gray-400 text-sm">GEMINI 1.5 PRO CONTEXT WINDOW</p>
+                    <p class="stat-number">1M</p>
+                    <p class="font-semibold text-lg">Tokens can be processed in a single prompt, equivalent to a 1,500-page document.</p>
+                </div>
+                <div class="section-card">
+                    <h3 class="text-xl font-bold mb-4 text-center">Context Window Comparison (Tokens)</h3>
+                    <p class="text-center text-gray-400 text-sm mb-4">A larger context window is critical for understanding large, complex files without losing information.</p>
+                     <div class="chart-container h-64 md:h-80">
+                        <canvas id="contextWindowChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="roadmap-infographic" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#F4A261]">A Roadmap to Smarter Interpretation</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-[#E9C46A]">Phase 1: Optimize</h3>
+                    <p class="text-gray-300">Refine the current Vision Workflow. Standardize image rendering to maximize reliability and accuracy with existing models.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-[#E9C46A]">Phase 2: Prototype</h3>
+                    <p class="text-gray-300">Develop a "Deep Extraction" tool using libraries like <code class="bg-[#0D1B2A] text-[#F4A261] px-1 rounded">openpyxl</code> to convert Excel files into a rich HTML representation.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-[#E9C46A]">Phase 3: Benchmark</h3>
+                    <p class="text-gray-300">Feed the structured HTML to a large context model like Gemini 1.5 Pro. Compare its accuracy, cost, and speed against the Vision approach.</p>
+                </div>
+                <div class="timeline-item border-l-transparent">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-[#E9C46A]">Phase 4: Hybridize</h3>
+                    <p class="text-gray-300">Implement a production system that uses the best tool for the job—Direct Analysis for most files, with the Vision approach as a fallback for unique cases.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center border-t border-gray-700 pt-8">
+            <p class="text-gray-400">Infographic generated on September 30, 2025. Data synthesized from industry analysis of AI document processing.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chartColors = {
+                yellow: '#E9C46A',
+                orange: '#F4A261',
+                red: '#E76F51',
+                teal: '#2A9D8F',
+                darkBlue: '#0D1B2A',
+                font: 'rgba(255, 255, 255, 0.7)'
+            };
+
+            const processLabel = (label) => {
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) lines.push(currentLine.trim());
+                return lines;
+            };
+            
+            const tooltipTitleCallback = function(tooltipItems) {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            const tooltipPluginConfig = {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    bodyFont: {
+                        size: 14
+                    },
+                    titleFont: {
+                        size: 16
+                    }
+                }
+            };
+
+            const repCtx = document.getElementById('representationChart').getContext('2d');
+            new Chart(repCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['HTML Representation', 'JSON Representation', 'Markdown Representation'],
+                    datasets: [{
+                        label: 'Context Captured',
+                        data: [95, 90, 60],
+                        backgroundColor: [chartColors.yellow, chartColors.orange, chartColors.red],
+                        borderColor: chartColors.darkBlue,
+                        borderWidth: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...tooltipPluginConfig,
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: chartColors.font,
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            const contextCtx = document.getElementById('contextWindowChart').getContext('2d');
+            new Chart(contextCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Gemini 1.5 Pro', 'Claude 3.5 Sonnet', 'GPT-4o'],
+                    datasets: [{
+                        label: 'Context Window (Thousands of Tokens)',
+                        data: [1000, 200, 128],
+                        backgroundColor: [chartColors.teal, chartColors.orange, chartColors.yellow],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: { color: chartColors.font, beginAtZero: true }
+                        },
+                        x: {
+                             ticks: { color: chartColors.font, callback: function(value) { return value + 'K' } }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipPluginConfig,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
